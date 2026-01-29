@@ -29,6 +29,42 @@ Managerid ,
 JoinedDate ,
 Salary 
 )
-VALUES('001', 'Samar', 'Maharjan','M','1996-04-2','Manager','Software Engineering','005','2025-11-2','9000000');
+VALUES('003', 'Samar', 'Maharjan','M','1996-04-2','Manager','Software Engineering','005','2025-11-2','9000000');
 
 select * from employee;
+
+# 4.Update the gender of an employee whose 
+#EmployeeID is 003.
+
+update employee
+set Gender ='M'
+where EmployeeID ='003';
+
+#5. display the firstname , current date, date of birth , and age of employee who are older than 25 years. 
+select Firstname,
+CURDATE() as CurrentDate, DOB ,
+timestampdiff(YEAR,DOB,CURDATE())>20;
+
+#6.	Write a query to find the oldest employee
+select * from employee 
+where DateofBirth = 
+(select Min(DateofBirth) from employee);
+
+#7.	Write a query to find the Youngest employee
+select * from employee
+where DOB = (select Max(DOB) from employee);
+
+#8.	Display the maximum salary department-wise.
+select department, Max(Salary) as Maxsalary
+from employee Group By department;
+
+#9.	Display the Min salary department-wise.
+select department, Min(Salary) as Minsalary
+from employee Group By department;
+
+#10.	List the employees who act as managers .
+select * from employee where
+EmployeeID in (select ManagerID from employee);
+
+
+
