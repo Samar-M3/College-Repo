@@ -1,5 +1,5 @@
 # create a database named dbemp and switch to it.-- 
-create database dbemp1;
+
 use dbemp1;
 
 # Create an emplouyee table with appropriate data types and constraint for employee details.
@@ -65,6 +65,14 @@ from employee Group By department;
 #10.	List the employees who act as managers .
 select * from employee where
 EmployeeID in (select ManagerID from employee);
+
+SET SQL_SAFE_UPDATES = 0;
+
+
+DESC employee;
+
+
+
 
 
 
