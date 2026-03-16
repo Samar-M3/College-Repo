@@ -1,4 +1,4 @@
-CREATE DATABASE Tech_Solutionss;
+CREATE DATABASE Tech_Solutionsssss;
 USE Tech_Solutionss;
 
 CREATE TABLE IF NOT EXISTS department(
